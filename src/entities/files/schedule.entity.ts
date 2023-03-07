@@ -2,9 +2,12 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('schedules_users_properties')
 export class Schedule {
-	@PrimaryGeneratedColumn()
+	@PrimaryGeneratedColumn('increment')
 	id: number;
 
 	@Column()
-	name: string;
+	date: Date | string;
+
+	@Column()
+	hour: string;
 }
