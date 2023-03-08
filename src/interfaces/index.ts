@@ -7,6 +7,8 @@ import {
 	iUserReturnArray,
 } from './files/users.interfaces';
 
+import { iCategory, iCreateCategory } from './files/categories.interfaces';
+
 export {
 	iLoginRequest,
 	iUser,
@@ -14,4 +16,6 @@ export {
 	iUserUpdate,
 	iUserReturn,
 	iUserReturnArray,
+	iCategory,
+	iCreateCategory,
 };
