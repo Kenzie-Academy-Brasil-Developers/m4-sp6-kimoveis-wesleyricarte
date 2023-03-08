@@ -1,25 +1,16 @@
 import { Router } from 'express';
-import {
-	adminTokenMiddleare,
-	validDataMiddleare,
-	validTokenMiddleare,
-	validUserMiddleare,
-} from '../middlewares';
+import { createUsersController, deleteUsersController, readUsersController, updateUsersController } from '../controllers';
+import { adminTokenMiddleare, duplicatedUserMiddleare, validDataMiddleare, validTokenMiddleare, validUserMiddleare } from '../middlewares';
 import { createUserSchema, updateUserSchema } from '../schemas';
 
 const usersRoutes: Router = Router();
 
-usersRoutes.post('', validDataMiddleare(createUserSchema));
+usersRoutes.post('', validDataMiddleare(createUserSchema), duplicatedUserMiddleare, createUsersController);
 
-usersRoutes.get('', adminTokenMiddleare);
+usersRoutes.get('', adminTokenMiddleare, readUsersController);
 
-usersRoutes.patch(
-	'/:id',
-	validDataMiddleare(updateUserSchema),
-	validTokenMiddleare,
-	validUserMiddleare
-);
+usersRoutes.patch('/:id', validDataMiddleare(updateUserSchema), duplicatedUserMiddleare, validTokenMiddleare, validUserMiddleare, updateUsersController);
 
-usersRoutes.delete('/:id', adminTokenMiddleare, validUserMiddleare);
+usersRoutes.delete('/:id', validUserMiddleare, adminTokenMiddleare, deleteUsersController);
 
 export default usersRoutes;
