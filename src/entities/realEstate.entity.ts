@@ -20,9 +20,9 @@ export class RealEstate {
 	@Column({ type: 'integer' })
 	size: number;
 
-	@CreateDateColumn({ type: 'timestamp' })
+	@CreateDateColumn({ type: 'date' })
 	createdAt: Date | string;
 
-	@UpdateDateColumn({ type: 'timestamp' })
+	@UpdateDateColumn({ type: 'date' })
 	updatedAt: Date | string;
 }
