@@ -7,7 +7,9 @@ import {
 
 const schedulesRoutes: Router = Router();
 
-schedulesRoutes.post('', validTokenMiddleare, validDataMiddleare(schema));
+schedulesRoutes.post('', validTokenMiddleare,
+// validDataMiddleare(schema)
+);
 schedulesRoutes.get('', adminTokenMiddleare);
 
 export default schedulesRoutes;
