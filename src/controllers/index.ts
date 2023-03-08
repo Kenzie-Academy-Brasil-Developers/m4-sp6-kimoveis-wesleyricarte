@@ -5,7 +5,10 @@ import {
 	updateUsersController,
 	deleteUsersController,
 } from './files/users.controllers';
-import { createCategoryController } from './files/categories.controllers';
+import {
+	createCategoryController,
+	readCategoriesController,
+} from './files/categories.controllers';
 
 export {
 	loginController,
@@ -14,4 +17,5 @@ export {
 	updateUsersController,
 	deleteUsersController,
 	createCategoryController,
+	readCategoriesController,
 };
