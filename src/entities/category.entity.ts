@@ -2,9 +2,9 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('categories')
 export class Category {
-	@PrimaryGeneratedColumn()
+	@PrimaryGeneratedColumn('increment')
 	id: number;
 
-	@Column()
+	@Column({ length: 45 })
 	name: string;
 }
