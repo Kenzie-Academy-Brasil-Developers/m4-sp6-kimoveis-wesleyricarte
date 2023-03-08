@@ -4,6 +4,7 @@ import readUsersService from './users/read.service';
 import updateUsersService from './users/update.service';
 import deleteUsersService from './users/delete.service';
 import createCategoryService from './categories/create.service';
+import readCategoriesService from './categories/read.service';
 
 export {
 	loginService,
@@ -12,4 +13,5 @@ export {
 	updateUsersService,
 	deleteUsersService,
 	createCategoryService,
+	readCategoriesService,
 };
