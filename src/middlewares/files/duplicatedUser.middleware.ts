@@ -16,7 +16,7 @@ const duplicatedUsersMiddleware = async (
 
 		const foundUser = await userRepository.findOneBy({ email: email });
 
-		if (foundUser) throw new AppError('User already exists.', 409);
+		if (foundUser) throw new AppError('Email already exists', 409);
 	}
 
 	return next();

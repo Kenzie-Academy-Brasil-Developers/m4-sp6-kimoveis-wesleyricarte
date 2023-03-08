@@ -10,7 +10,7 @@ const validTokenMiddleware = async (
 ): Promise<void> => {
 	const { authorization } = req.headers;
 
-	if (!authorization) throw new AppError('Token is missing', 401);
+	if (!authorization) throw new AppError('Missing bearer token', 401);
 
 	const token = authorization.split(' ')[1];
 
