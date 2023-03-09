@@ -1,10 +1,16 @@
 import {
 	Entity,
-	Column,
 	PrimaryGeneratedColumn,
+	Column,
 	CreateDateColumn,
 	UpdateDateColumn,
+	OneToOne,
+	ManyToOne,
+	JoinColumn,
+	Index,
 } from 'typeorm';
+import { Address } from './address.entity';
+import { Category } from './category.entity';
 
 @Entity('real_estate')
 export class RealEstate {
@@ -25,4 +31,12 @@ export class RealEstate {
 
 	@UpdateDateColumn({ type: 'date' })
 	updatedAt: Date | string;
+
+	@OneToOne(() => Address)
+	@JoinColumn()
+	address: Address;
+
+	@ManyToOne(() => Category)
+	@JoinColumn()
+	category: Category;
 }
