@@ -10,7 +10,10 @@ import {
 	readCategoriesController,
 	readRealEStateByCategoriesController,
 } from './files/categories.controllers';
-import { createRealEstateController } from './files/realEstate.controllers';
+import {
+	createRealEstateController,
+	readRealEstateController,
+} from './files/realEstate.controllers';
 
 export {
 	loginController,
@@ -22,4 +25,5 @@ export {
 	readCategoriesController,
 	readRealEStateByCategoriesController,
 	createRealEstateController,
+	readRealEstateController,
 };
