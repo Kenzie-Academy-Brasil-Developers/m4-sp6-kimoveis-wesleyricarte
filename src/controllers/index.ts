@@ -8,6 +8,7 @@ import {
 import {
 	createCategoryController,
 	readCategoriesController,
+	readRealEStateByCategoriesController,
 } from './files/categories.controllers';
 import { createRealEstateController } from './files/realEstate.controllers';
 
@@ -19,5 +20,6 @@ export {
 	deleteUsersController,
 	createCategoryController,
 	readCategoriesController,
+	readRealEStateByCategoriesController,
 	createRealEstateController,
 };
