@@ -14,8 +14,8 @@ const createRealEstateService = async (data: any) => {
 	const category = await categoryRepository.findOneBy({ id: categoryId });
     if (!category) throw new AppError('Category not found', 404)
 
-    const repAddr = await addressRepository.findOneBy({ zipCode: zipCode })
-    if (repAddr && repAddr.state === state && repAddr.city === city && repAddr.street === street && repAddr.number === number) {
+    const rep = await addressRepository.findOneBy({ zipCode: zipCode })
+    if (rep && rep.state === state && rep.city === city && rep.street === street && rep.number === number) {
         throw new AppError('Address already exists', 409)
     }
 
