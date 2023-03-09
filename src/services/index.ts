@@ -4,7 +4,7 @@ import readUsersService from './users/read.service';
 import updateUsersService from './users/update.service';
 import deleteUsersService from './users/delete.service';
 import createCategoryService from './categories/create.service';
-import readCategoriesService from './categories/read.service';
+import { readCategoriesService, readRealEstateByCategoriesService } from './categories/read.service';
 import createRealEstateService from './realEstate/create.service';
 
 export {
@@ -15,5 +15,6 @@ export {
 	deleteUsersService,
 	createCategoryService,
 	readCategoriesService,
+	readRealEstateByCategoriesService,
 	createRealEstateService,
 };
