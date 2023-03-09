@@ -7,7 +7,6 @@ import {
 	OneToOne,
 	ManyToOne,
 	JoinColumn,
-	Index,
 } from 'typeorm';
 import { Address } from './address.entity';
 import { Category } from './category.entity';
