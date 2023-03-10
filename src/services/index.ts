@@ -7,6 +7,8 @@ import createCategoryService from './categories/create.service';
 import { readCategoriesService, readRealEstateByCategoriesService } from './categories/read.service';
 import createRealEstateService from './realEstate/create.service';
 import readRealEstateService from './realEstate/read.service';
+import createSchedulesService from './schedules/create.service';
+import readSchedulesService from './schedules/read.service';
 
 export {
 	loginService,
@@ -18,5 +20,7 @@ export {
 	readCategoriesService,
 	readRealEstateByCategoriesService,
 	createRealEstateService,
-    readRealEstateService,
+	readRealEstateService,
+	createSchedulesService,
+	readSchedulesService,
 };
