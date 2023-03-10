@@ -7,6 +7,7 @@ import {
 	OneToOne,
 	ManyToOne,
 	JoinColumn,
+	AfterLoad,
 } from 'typeorm';
 import { Address } from './address.entity';
 import { Category } from './category.entity';
@@ -38,4 +39,7 @@ export class RealEstate {
 	@ManyToOne(() => Category)
 	@JoinColumn()
 	category: Category;
+
+	@AfterLoad()
+	transformToString() { this.value = String(this.value) }
 }

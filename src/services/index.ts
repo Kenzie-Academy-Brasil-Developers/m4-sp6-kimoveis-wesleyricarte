@@ -6,6 +6,7 @@ import deleteUsersService from './users/delete.service';
 import createCategoryService from './categories/create.service';
 import { readCategoriesService, readRealEstateByCategoriesService } from './categories/read.service';
 import createRealEstateService from './realEstate/create.service';
+import readRealEstateService from './realEstate/read.service';
 
 export {
 	loginService,
@@ -17,4 +18,5 @@ export {
 	readCategoriesService,
 	readRealEstateByCategoriesService,
 	createRealEstateService,
+    readRealEstateService,
 };
