@@ -3,7 +3,7 @@ import { AppError } from '../../errors';
 import { AppDataSource } from '../../data-source';
 import { Address, Category, RealEstate } from '../../entities';
 
-const createRealEstateService = async (data: any) => {
+const createRealEstateService = async (data: ) => {
 	const { address: addressData, categoryId } = data;
     const { zipCode, state, city, street, number } = addressData
 

@@ -11,15 +11,17 @@ export const defaultUserSchema = z.object({
 	deletedAt: z.string().nullish(),
 });
 
-export const createUserSchema = defaultUserSchema.omit({
-    id: true,
-    createdAt: true,
-    updatedAt: true,
-    deletedAt: true,
-    admin: true,
-  }).extend({
-    admin: z.optional(z.boolean())
-  });
+export const createUserSchema = defaultUserSchema
+	.omit({
+		id: true,
+		createdAt: true,
+		updatedAt: true,
+		deletedAt: true,
+		admin: true,
+	})
+	.extend({
+		admin: z.optional(z.boolean()),
+	});
 
 export const returnUserSchema = defaultUserSchema.omit({
 	password: true,
