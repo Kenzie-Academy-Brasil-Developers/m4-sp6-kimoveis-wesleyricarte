@@ -9,6 +9,8 @@ import {
 
 import { iCategory, iCreateCategory } from './files/categories.interfaces';
 
+import { iScheduleCreate } from './files/schedules.interfaces';
+
 export {
 	iLoginRequest,
 	iUser,
@@ -18,4 +20,5 @@ export {
 	iUserReturnArray,
 	iCategory,
 	iCreateCategory,
+    iScheduleCreate,
 };
