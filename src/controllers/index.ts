@@ -5,7 +5,19 @@ import {
 	updateUsersController,
 	deleteUsersController,
 } from './files/users.controllers';
-import { createCategoryController } from './files/categories.controllers';
+import {
+	createCategoryController,
+	readCategoriesController,
+	readRealEStateByCategoriesController,
+} from './files/categories.controllers';
+import {
+	createRealEstateController,
+	readRealEstateController,
+} from './files/realEstate.controllers';
+import {
+	createSchedulesController,
+	readSchedulesController,
+} from './files/schedules.controllers';
 
 export {
 	loginController,
@@ -14,4 +26,10 @@ export {
 	updateUsersController,
 	deleteUsersController,
 	createCategoryController,
+	readCategoriesController,
+	readRealEStateByCategoriesController,
+	createRealEstateController,
+	readRealEstateController,
+	createSchedulesController,
+	readSchedulesController,
 };

@@ -1,10 +1,18 @@
 import {
 	Entity,
-	Column,
 	PrimaryGeneratedColumn,
+	Column,
 	CreateDateColumn,
 	UpdateDateColumn,
+	OneToOne,
+	ManyToOne,
+	JoinColumn,
+	AfterLoad,
+    OneToMany,
 } from 'typeorm';
+import { Address } from './address.entity';
+import { Category } from './category.entity';
+import { Schedule } from './schedule.entity';
 
 @Entity('real_estate')
 export class RealEstate {
@@ -14,7 +22,7 @@ export class RealEstate {
 	@Column({ default: false })
 	sold: boolean;
 
-	@Column({ type: 'decimal', precision: 10, scale: 2 })
+	@Column({ type: 'decimal', precision: 12, scale: 2 })
 	value: number | string;
 
 	@Column({ type: 'integer' })
@@ -25,4 +33,18 @@ export class RealEstate {
 
 	@UpdateDateColumn({ type: 'date' })
 	updatedAt: Date | string;
+
+	@OneToOne(() => Address)
+	@JoinColumn()
+	address: Address;
+
+	@ManyToOne(() => Category)
+	@JoinColumn()
+	category: Category;
+
+    @OneToMany(() => Schedule, (schedule) => schedule.realEstate)
+    schedules: Array<Schedule>
+
+	// @AfterLoad()
+	// transformToString() { this.value = String(this.value) }
 }

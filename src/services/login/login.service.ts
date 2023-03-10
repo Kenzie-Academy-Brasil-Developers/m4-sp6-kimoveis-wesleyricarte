@@ -11,10 +11,10 @@ const loginService = async (loginData: iLoginRequest): Promise<string> => {
 	const userRepository: Repository<User> = AppDataSource.getRepository(User);
 
 	const foundUser: User | null = await userRepository.findOneBy({ email: email });
-	if (!foundUser) throw new AppError('Invalid email or password', 401);
+	if (!foundUser) throw new AppError('Invalid credentials', 401);
 
 	const matchPassword: boolean = await compare(password, foundUser!.password);
-	if (!matchPassword) throw new AppError('Invalid email or password', 401);
+	if (!matchPassword) throw new AppError('Invalid credentials', 401);
 
 	const token: string = jwt.sign(
 		{
