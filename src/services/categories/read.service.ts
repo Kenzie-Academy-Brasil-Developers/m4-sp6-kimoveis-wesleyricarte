@@ -1,6 +1,6 @@
 import { Repository } from 'typeorm';
 import { AppDataSource } from '../../data-source';
-import { Category, RealEstate } from '../../entities';
+import { Category } from '../../entities';
 import { AppError } from '../../errors';
 import { iCategory } from '../../interfaces';
 
@@ -14,7 +14,6 @@ export const readCategoriesService = async (): Promise<Array<iCategory>> => {
 
 export const readRealEstateByCategoriesService = async (categoryId: number): Promise<Category> => {
     const categoriesRepository: Repository<Category> = AppDataSource.getRepository(Category);
-	const realEstateRepository: Repository<RealEstate> = AppDataSource.getRepository(RealEstate);
 
     const category: iCategory | null = await categoriesRepository.findOneBy({ id: categoryId });
     if (!category) {throw new AppError('Category not found', 404)}

@@ -2,11 +2,11 @@ import { Repository } from 'typeorm';
 import { AppDataSource } from '../../data-source';
 import { User } from '../../entities';
 import { AppError } from '../../errors';
-import { iUserReturn } from '../../interfaces';
+import { iUserReturn, iUserUpdate } from '../../interfaces';
 import { returnUserSchema } from '../../schemas';
 
 const updadeUserService = async (
-	newUserData: any,
+	newUserData: iUserUpdate | any,
 	userId: number,
 	thisUserId: number,
 	thisUserAdmin: boolean

@@ -2,8 +2,9 @@ import { Repository } from 'typeorm';
 import { AppError } from '../../errors';
 import { AppDataSource } from '../../data-source';
 import { Address, Category, RealEstate } from '../../entities';
+import { iRealEstateCreate } from '../../interfaces';
 
-const createRealEstateService = async (data: ) => {
+const createRealEstateService = async (data: iRealEstateCreate | any) => {
 	const { address: addressData, categoryId } = data;
     const { zipCode, state, city, street, number } = addressData
 

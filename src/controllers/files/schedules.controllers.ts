@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { iScheduleCreate } from '../../interfaces';
+import { iScheduleArray, iScheduleCreate } from '../../interfaces';
 import { createSchedulesService, readSchedulesService } from '../../services';
 
 export const createSchedulesController = async (req: Request, res: Response): Promise<Response> => {

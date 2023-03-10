@@ -13,6 +13,7 @@ import {
 import {
 	realEstateSchema,
 	createRealEstateSchema,
+    addressSchema,
 } from './files/realEstate.schemas';
 import {
 	scheduleSchema,
@@ -33,6 +34,7 @@ export {
 	createCategorySchema,
 	realEstateSchema,
 	createRealEstateSchema,
+    addressSchema,
 	scheduleSchema,
 	createScheduleSchema,
     returnScheduleSchema,
