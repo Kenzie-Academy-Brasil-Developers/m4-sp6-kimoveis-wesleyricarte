@@ -14,6 +14,12 @@ import {
 	realEstateSchema,
 	createRealEstateSchema,
 } from './files/realEstate.schemas';
+import {
+	scheduleSchema,
+	createScheduleSchema,
+    returnScheduleSchema,
+	arrayScheduleSchema,
+} from './files/schedules.schemas';
 
 export {
 	defaultUserSchema,
@@ -27,4 +33,8 @@ export {
 	createCategorySchema,
 	realEstateSchema,
 	createRealEstateSchema,
+	scheduleSchema,
+	createScheduleSchema,
+    returnScheduleSchema,
+	arrayScheduleSchema,
 };
