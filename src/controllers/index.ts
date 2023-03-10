@@ -14,6 +14,10 @@ import {
 	createRealEstateController,
 	readRealEstateController,
 } from './files/realEstate.controllers';
+import {
+	createSchedulesController,
+	readSchedulesController,
+} from './files/schedules.controllers';
 
 export {
 	loginController,
@@ -26,4 +30,6 @@ export {
 	readRealEStateByCategoriesController,
 	createRealEstateController,
 	readRealEstateController,
+	createSchedulesController,
+	readSchedulesController,
 };
