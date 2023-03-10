@@ -8,7 +8,9 @@ import {
 	DeleteDateColumn,
     BeforeInsert,
     BeforeUpdate,
+    OneToMany,
 } from 'typeorm';
+import { Schedule } from './schedule.entity';
 
 @Entity('users')
 export class User {
@@ -42,4 +44,7 @@ export class User {
         const isEncrypted = getRounds(this.password)
         if (!isEncrypted) this.password = hashSync(this.password, 10)
     }
+
+    @OneToMany(() => Schedule, (schedule) => schedule.user)
+    schedules: Array<Schedule>
 }

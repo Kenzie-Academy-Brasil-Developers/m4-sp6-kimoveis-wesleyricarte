@@ -1,4 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import {
+	Entity,
+	Column,
+	PrimaryGeneratedColumn,
+	ManyToOne,
+	JoinColumn,
+} from 'typeorm';
 import { RealEstate } from './realEstate.entity';
 import { User } from './user.entity';
 
@@ -7,17 +13,17 @@ export class Schedule {
 	@PrimaryGeneratedColumn('increment')
 	id: number;
 
-	@Column({ type: 'date'})
+	@Column({ type: 'date' })
 	date: string;
 
-	@Column({ type: 'time'})
+	@Column({ type: 'time' })
 	hour: string;
 
-    @ManyToOne(() => RealEstate)
-    @JoinColumn()
-    realEstate: RealEstate
+	@ManyToOne(() => RealEstate)
+	@JoinColumn()
+	realEstate: RealEstate;
 
-    @ManyToOne(() => User)
-    @JoinColumn()
-    user: User
+	@ManyToOne(() => User)
+	@JoinColumn()
+	user: User;
 }

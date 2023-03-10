@@ -8,9 +8,11 @@ import {
 	ManyToOne,
 	JoinColumn,
 	AfterLoad,
+    OneToMany,
 } from 'typeorm';
 import { Address } from './address.entity';
 import { Category } from './category.entity';
+import { Schedule } from './schedule.entity';
 
 @Entity('real_estate')
 export class RealEstate {
@@ -40,6 +42,9 @@ export class RealEstate {
 	@JoinColumn()
 	category: Category;
 
-	@AfterLoad()
-	transformToString() { this.value = String(this.value) }
+    @OneToMany(() => Schedule, (schedule) => schedule.realEstate)
+    schedules: Array<Schedule>
+
+	// @AfterLoad()
+	// transformToString() { this.value = String(this.value) }
 }
