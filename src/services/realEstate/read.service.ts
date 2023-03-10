@@ -7,6 +7,10 @@ const readRealEstateService = async (): Promise<any> => {
 
 	const arrayRealEstate: Array<RealEstate> | null = await realEstateRepository.find({ relations: { address: true } });
 
+    arrayRealEstate.map((realEstate) => {
+        realEstate.value = realEstate.value.toString()
+    });
+
     return arrayRealEstate
 };
 
