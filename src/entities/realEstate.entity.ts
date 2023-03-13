@@ -7,7 +7,6 @@ import {
 	OneToOne,
 	ManyToOne,
 	JoinColumn,
-	AfterLoad,
     OneToMany,
 } from 'typeorm';
 import { Address } from './address.entity';
@@ -44,7 +43,4 @@ export class RealEstate {
 
     @OneToMany(() => Schedule, (schedule) => schedule.realEstate)
     schedules: Array<Schedule>
-
-	// @AfterLoad()
-	// transformToString() { this.value = String(this.value) }
 }
